@@ -1,0 +1,73 @@
+Soal No 1
+CREATE DATABASE myshop;
+
+Soal No 2
+- Table Users
+CREATE TABLE users (
+    -> id int AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(255),
+    -> email varchar(255),
+    -> password varchar(255))
+    -> ;
+
+- Table Categories
+CREATE TABLE categories (
+    -> id int AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(255))
+    -> ;
+
+- Table Items
+CREATE TABLE items (
+    -> id int AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(255),
+    -> description varchar(255),
+    -> price int,
+    -> stock int,
+    -> category_id int,
+    -> FOREIGN KEY (category_id) REFERENCES categories(id))
+    -> ;
+
+
+Soal 3
+- Insert ke Users
+INSERT INTO users
+    -> (name,email,password) VALUES
+    -> ("Muhammad Al Fajar","muhammadalfajar218@gmail.com","alfa03r")
+    -> ;
+
+- Insert ke Categories
+INSERT INTO categories
+    -> (name) VALUES
+    -> ("gadget"),
+    -> ("cloth"),
+    -> ("men"),
+    -> ("women"),
+    -> ("branded")
+    -> ;
+- Insert ke Items
+INSERT INTO items
+    -> (name,description,price,stock,category_id) VALUES
+    -> ("Sumsang b50","hape keren dari merek sumsang",4000000,100,1),
+    -> ("Uniklooh","baju keren dari brand ternama",500000,50,2),
+    -> ("IMHO Watch","jam tangan anak yang jujur banget",2000000,10,1)
+    -> ;
+
+Soal 4
+a. Mengambil Data Users (terkecuali pw)
+    SELECT id,name,email FROM users;
+
+b. Mengambil Data Items
+   - price > 1.000.000
+     SELECT * FROM items WHERE price > 1000000;
+   - like 'sum%'
+     SELECT * FROM items WHERE name LIKE 'sum%';
+
+c. Menampilkan data items join dengan kategori
+   SELECT items.* , categories.name
+    -> FROM items
+    -> INNER JOIN categories on
+    -> items.category_id = categories.id
+    -> ;
+
+Soal 5
+UPDATE items SET price = 2500000 WHERE id = 1;
