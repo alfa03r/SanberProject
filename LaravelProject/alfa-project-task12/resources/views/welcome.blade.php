@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-    <ul>
-        <li>list 1</li>
-        <li>list 2</li>
-        <li>list 3</li>
-    </ul>
+<h1>Dashboar admin</h1>
+    welcome tu admin ILT, this is the place that you can play with your own data
 @endsection

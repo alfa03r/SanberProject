@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{asset('/admin/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('/admin/dist/css/adminlte.min.css')}}">
+
+  @stack('style')
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -99,5 +101,7 @@
 <script src="{{asset('/admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('/admin/dist/js/adminlte.min.js')}}"></script>
+
+@stack('scripts')
 </body>
 </html>
